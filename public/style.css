@@ -415,49 +415,42 @@ button.nav-button:active::before {
 .carousel-wrapper {
     position: relative;
     width: 100%;
-    max-width: 500px; /* Un poco más ancho que la tarjeta para las flechas */
+    max-width: 1200px;
     margin: 0 auto 2rem auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0 60px; /* Espacio para las flechas */
+    box-sizing: border-box;
+}
+
+.carousel-mask {
+    width: 100%;
+    overflow: hidden; /* Aquí es donde ocurre el recorte de las tarjetas */
 }
 
 .carousel-container {
-    position: relative;
-    width: 360px;
-    height: 450px;
-    perspective: 1000px;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
 }
 
 .card {
-    position: absolute; /* Cambiado a absoluto para apilarlas */
-    top: 0;
-    left: 0;
-    width: 360px;
+    position: relative;
+    flex: 0 0 calc(33.333% - 20px); /* 3 tarjetas por fila con espacio */
     height: 450px;
+    margin: 0 10px;
     background: transparent;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 15px 25px rgba(0,0,0,0.5);
-    transition: all 0.5s ease-in-out;
-    opacity: 0;
-    transform: scale(0.9) translateY(20px);
-    z-index: 0;
-    pointer-events: none; /* Desactiva interacción en las cartas ocultas */
-}
-
-.card.active {
+    transition: transform 0.3s ease;
     opacity: 1;
-    transform: scale(1) translateY(0);
-    z-index: 10;
-    pointer-events: auto;
+    z-index: 1;
 }
 
-.card.prev,
-.card.next {
-    opacity: 0.4;
-    transform: scale(0.95) translateY(10px);
-    z-index: 5;
+.card.active, .card.prev, .card.next {
+    /* Resetear estilos antiguos */
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
 }
 
 /* Botones del carrusel */
@@ -481,23 +474,26 @@ button.nav-button:active::before {
 }
 
 .prev-btn {
-    left: -60px;
+    left: 10px;
 }
 
 .next-btn {
-    right: -60px;
+    right: 10px;
 }
 
-/* Ajustes responsivos para flechas */
+/* Ajustes responsivos */
+@media (max-width: 900px) {
+    .card {
+        flex: 0 0 calc(50% - 20px); /* 2 tarjetas en tablet */
+    }
+}
+
 @media (max-width: 600px) {
+    .card {
+        flex: 0 0 calc(100% - 20px); /* 1 tarjeta en móvil */
+    }
     .carousel-wrapper {
-        max-width: 360px;
-    }
-    .prev-btn {
-        left: -40px;
-    }
-    .next-btn {
-        right: -40px;
+        padding: 0 40px;
     }
 }
 
