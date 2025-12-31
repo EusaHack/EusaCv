@@ -577,49 +577,50 @@ button.nav-button:active::before {
     margin: 0;
     color: #555;
 }
- 
- / *   E s t i l o s   p a r a   S e c c i √ ≥ n   S o f t w a r e   * /  
- . s o f t w a r e - c o n t a i n e r   {  
-         t e x t - a l i g n :   c e n t e r ;  
-         p a d d i n g :   2 r e m   0 ;  
- }  
-  
- . s o f t w a r e - c o n t a i n e r   h 3   {  
-         c o l o r :   # F F D 7 0 0 ;  
-         f o n t - s i z e :   1 . 5 r e m ;  
-         m a r g i n - b o t t o m :   2 r e m ;  
-         t e x t - t r a n s f o r m :   u p p e r c a s e ;  
-         l e t t e r - s p a c i n g :   1 p x ;  
- }  
-  
- . s o f t w a r e - t a g s   {  
-         d i s p l a y :   f l e x ;  
-         f l e x - w r a p :   w r a p ;  
-         j u s t i f y - c o n t e n t :   c e n t e r ;  
-         g a p :   1 5 p x ;  
-         m a x - w i d t h :   9 0 0 p x ;  
-         m a r g i n :   0   a u t o ;  
- }  
-  
- . t a g   {  
-         b a c k g r o u n d :   r g b a ( 1 9 ,   5 8 ,   1 5 0 ,   0 . 4 ) ;   / *   A z u l   o s c u r o   c o n   t r a n s p a r e n c i a   * /  
-         c o l o r :   # f f f ;  
-         p a d d i n g :   1 2 p x   2 4 p x ;  
-         b o r d e r - r a d i u s :   3 0 p x ;  
-         f o n t - s i z e :   1 r e m ;  
-         b o r d e r :   1 p x   s o l i d   r g b a ( 2 5 5 ,   2 1 5 ,   0 ,   0 . 3 ) ;   / *   B o r d e   d o r a d o   s u t i l   * /  
-         t r a n s i t i o n :   a l l   0 . 3 s   c u b i c - b e z i e r ( 0 . 1 7 5 ,   0 . 8 8 5 ,   0 . 3 2 ,   1 . 2 7 5 ) ;  
-         b a c k d r o p - f i l t e r :   b l u r ( 5 p x ) ;  
-         c u r s o r :   d e f a u l t ;  
-         u s e r - s e l e c t :   n o n e ;  
-         b o x - s h a d o w :   0   4 p x   6 p x   r g b a ( 0 ,   0 ,   0 ,   0 . 1 ) ;  
- }  
-  
- . t a g : h o v e r   {  
-         b a c k g r o u n d :   r g b a ( 2 5 5 ,   2 1 5 ,   0 ,   0 . 2 ) ;  
-         b o r d e r - c o l o r :   # F F D 7 0 0 ;  
-         t r a n s f o r m :   t r a n s l a t e Y ( - 5 p x )   s c a l e ( 1 . 0 5 ) ;  
-         b o x - s h a d o w :   0   1 0 p x   2 0 p x   r g b a ( 0 ,   0 ,   0 ,   0 . 2 ) ;  
-         t e x t - s h a d o w :   0   0   8 p x   r g b a ( 2 5 5 ,   2 1 5 ,   0 ,   0 . 5 ) ;  
- }  
- 
+
+/* Estilos para Secci√≥n Software - Estilo Mosaico */
+.software-container {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.software-container h3 {
+    color: #FFD700;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.software-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tag {
+    background: #e1e1e1;
+    color: #666;
+    padding: 15px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    border-radius: 0; /* Rectangular */
+}
+
+/* Efecto Skew Backward al hacer hover (similar a la imagen) */
+.tag:hover {
+    background: #FFD700; /* Cambio de color al hacer hover */
+    color: #091c47;
+    transform: skew(-10deg);
+}
