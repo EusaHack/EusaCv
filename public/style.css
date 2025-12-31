@@ -257,6 +257,7 @@ button.big-button:active::before {
 }
 
 .section-content {
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -301,22 +302,22 @@ button.nav-button::before {
     bottom: 0;
     background: var(--colorShadeC);
     border-radius: inherit;
-    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.5em 0 0 var(--colorShadeA); /* Sombra reducida */
-    transform: translate3d(0, 0.5em, -1em);
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+    transform: translate3d(0, 0.75em, -1em);
     transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
 
 button.nav-button:hover {
     background: var(--colorShadeD);
-    transform: translate(0, 0.25em);
+    transform: translate(0, 0.375em);
 }
 
 button.nav-button:hover::before {
-    transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
 }
 
 button.nav-button:active {
-    transform: translate(0em, 0.5em);
+    transform: translate(0em, 0.75em);
 }
 
 button.nav-button:active::before {
@@ -328,9 +329,84 @@ button.nav-button:active::before {
     display: flex;
     gap: 2rem;
     position: absolute;
-    bottom: 0; /* Al ras del borde inferior */
-    margin-bottom: 3rem; /* Margen aumentado para subirlos un poco */
+    bottom: 3rem; /* Posición fija abajo */
     width: 100%;
     justify-content: center;
+    margin: 0;
     padding: 0;
+}
+
+/* Estilos para Section 2 - Experiencia */
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 2rem;
+}
+
+.experience-card {
+    background-color: #0f224a; /* Azul oscuro */
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 5px solid #FFD700;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    background-color: #132b5e; /* Un poco más claro al hacer hover */
+}
+
+.card-header {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.job-title {
+    color: #33C3F0; /* Azul claro estilo cyan */
+    font-weight: 700;
+}
+
+.separator {
+    color: #ccc;
+}
+
+.company {
+    color: #ccc;
+    font-weight: 400;
+}
+
+.card-date {
+    font-style: italic;
+    color: #8892b0;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.card-description {
+    color: #e6f1ff;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.highlight {
+    color: #FFD700;
+    font-weight: 400;
+}
+
+.highlight-bold {
+    color: #FFD700;
+    font-weight: 700;
 }
