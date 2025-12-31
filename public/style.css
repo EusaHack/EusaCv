@@ -149,7 +149,6 @@ button {
 }
 
 button.big-button {
-  margin-top: 2rem;
   margin-bottom: 5rem;
   padding: 1em 2em;
   border: 2px solid var(--colorShadeA);
