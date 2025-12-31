@@ -2,12 +2,12 @@ body {
     font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     background-color: #091c47;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .content-wrapper {
@@ -18,6 +18,7 @@ body {
     padding: 2rem;
     max-width: 1200px;
     width: 90%;
+    min-height: 80vh; /* Ajuste para que ocupe gran parte de la pantalla inicial */
 }
 
 .text-side {
@@ -223,4 +224,22 @@ button.big-button:active::before {
         width: 250px;
         height: 250px;
     }
+}
+
+.info-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0c245c; /* Un tono ligeramente diferente para distinguir */
+    color: #ffffff;
+}
+
+.info-section h2 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
