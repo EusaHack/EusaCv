@@ -508,11 +508,11 @@ button.nav-button:active::before {
 }
 
 .prev-btn {
-    left: 10px;
+    left: -10px;
 }
 
 .next-btn {
-    right: 10px;
+    right: -10px;
 }
 
 /* Ajustes responsivos */
