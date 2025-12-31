@@ -14,11 +14,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 2rem;
     padding: 2rem;
     max-width: 1200px;
     width: 90%;
-    min-height: 80vh; /* Ajuste para que ocupe gran parte de la pantalla inicial */
+    min-height: auto;
+    flex-grow: 1; /* Ocupa el espacio disponible pero permite que el botón suba */
 }
 
 .text-side {
@@ -46,7 +47,7 @@ body {
 }
 
 .main-title {
-    font-size: 8rem;
+    font-size: 6rem;
     font-weight: 900;
     line-height: 1;
     margin: 0;
@@ -57,7 +58,7 @@ body {
 }
 
 .bottom-text {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 400;
     color: #ffffff;
     margin-top: 1rem;
@@ -68,8 +69,8 @@ body {
 }
 
 .icon-container {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -150,7 +151,8 @@ button {
 }
 
 button.big-button {
-  margin-bottom: 5rem;
+  margin-top: 0;
+  margin-bottom: 3rem;
   padding: 1em 2em;
   border: 2px solid var(--colorShadeA);
   border-radius: 1em;
