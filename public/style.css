@@ -1,52 +1,64 @@
-body {
-    font-family: 'Montserrat', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #091c47;
-    overflow: hidden;
+/* VHS Effect */
+.vhs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.25) 50%
+    ), linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.06),
+        rgba(0, 255, 0, 0.02),
+        rgba(0, 0, 255, 0.06)
+    );
+    background-size: 100% 2px, 3px 100%;
+    animation: vhs-flicker 0.15s infinite;
 }
 
-.content-wrapper {
-    text-align: center;
-    color: #f0f0f0;
-    padding: 2rem;
-    max-width: 800px;
+.vhs::after {
+    content: "PLAY";
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-family: monospace;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+    animation: blink 2s infinite;
 }
 
-.top-text {
-    font-size: 1rem;
-    letter-spacing: 0.2em;
-    font-weight: 700;
-    color: #FFD700; /* Color dorado/amarillo para resaltar como etiqueta */
-    margin-bottom: 1rem;
-    text-transform: uppercase;
+@keyframes vhs-flicker {
+    0% { opacity: 0.85; }
+    5% { opacity: 0.95; }
+    10% { opacity: 0.9; }
+    15% { opacity: 0.85; }
+    20% { opacity: 0.95; }
+    25% { opacity: 0.9; }
+    30% { opacity: 0.85; }
+    35% { opacity: 0.95; }
+    40% { opacity: 0.9; }
+    45% { opacity: 0.85; }
+    50% { opacity: 0.95; }
+    55% { opacity: 0.9; }
+    60% { opacity: 0.85; }
+    65% { opacity: 0.95; }
+    70% { opacity: 0.9; }
+    75% { opacity: 0.85; }
+    80% { opacity: 0.95; }
+    85% { opacity: 0.9; }
+    90% { opacity: 0.85; }
+    95% { opacity: 0.95; }
+    100% { opacity: 0.9; }
 }
 
-.main-title {
-    font-size: 5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    margin: 1rem 0;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.bottom-text {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #ffffff;
-    margin-top: 2rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 /* Responsive adjustments */
@@ -56,5 +68,10 @@ body {
     }
     .bottom-text {
         font-size: 1rem;
+    }
+    .vhs::after {
+        font-size: 1.5rem;
+        top: 1rem;
+        left: 1rem;
     }
 }
