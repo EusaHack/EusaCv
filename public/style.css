@@ -410,3 +410,62 @@ button.nav-button:active::before {
     color: #FFD700;
     font-weight: 700;
 }
+
+/* Estilos para Section 3 - Sliding Card */
+.card {
+    position: relative;
+    width: 360px; /* Tamaño aumentado */
+    height: 450px;
+    margin: 0 auto 2rem auto; /* Margen superior eliminado para subirla */
+    background: transparent;
+    border-radius: 10px;
+    overflow: hidden; /* Para que la animación de deslizamiento funcione bien */
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+
+.card .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card .slide.slide1 {
+    background: #133a96; /* Azul oscuro tema */
+    z-index: 2;
+    transform: translateY(0);
+}
+
+.card:hover .slide.slide1 {
+    transform: translateY(-100%);
+}
+
+.card .slide.slide2 {
+    background: #fff;
+    color: #333;
+    z-index: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.card .icon {
+    font-size: 4em;
+    color: #FFD700; /* Amarillo tema */
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    color: #091c47;
+}
+
+.card p {
+    margin: 0;
+    color: #555;
+}
