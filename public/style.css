@@ -5,23 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url('images/image-fondo.png');
-    background-size: 90%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #333;
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
-    z-index: -1;
+    background-color: #091c47;
 }
 
 .container {
