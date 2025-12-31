@@ -578,25 +578,26 @@ button.nav-button:active::before {
     color: #555;
 }
 
-/* Estilos para Sección Software - Estilo Mosaico */
+/* Estilos para Sección Software - Estilo Mosaico Compacto */
 .software-container {
     text-align: center;
-    padding: 2rem 0;
+    padding: 1rem 0; /* Reducido de 2rem */
 }
 
 .software-container h3 {
     color: #FFD700;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.2rem; /* Reducido de 1.5rem */
+    margin-bottom: 1rem; /* Reducido de 2rem */
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-top: 1rem;
 }
 
 .software-tags {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 10px; /* Reducido de 15px */
     max-width: 900px;
     margin: 0 auto;
 }
@@ -604,8 +605,8 @@ button.nav-button:active::before {
 .tag {
     background: #e1e1e1;
     color: #666;
-    padding: 15px 25px;
-    font-size: 1rem;
+    padding: 8px 15px; /* Reducido de 15px 25px */
+    font-size: 0.9rem; /* Reducido de 1rem */
     font-weight: bold;
     border: none;
     cursor: pointer;
@@ -615,7 +616,7 @@ button.nav-button:active::before {
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     position: relative;
-    border-radius: 0; /* Rectangular */
+    border-radius: 0;
 }
 
 /* Efecto Skew Backward al hacer hover (similar a la imagen) */
