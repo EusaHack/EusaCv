@@ -35,7 +35,7 @@ body {
 }
 
 .top-text {
-    font-size: 1rem;
+    font-size: 1.5rem;
     letter-spacing: 0.2em;
     font-weight: 700;
     color: #FFD700;
@@ -44,7 +44,7 @@ body {
 }
 
 .main-title {
-    font-size: 5rem;
+    font-size: 8rem;
     font-weight: 900;
     line-height: 1;
     margin: 0;
@@ -55,19 +55,19 @@ body {
 }
 
 .bottom-text {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 400;
     color: #ffffff;
     margin-top: 1rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     line-height: 1.4;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .icon-container {
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,17 +97,17 @@ body {
     }
     
     .main-title {
-        font-size: 3.5rem;
+        font-size: 5rem;
     }
     
     .bottom-text {
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin-left: auto;
         margin-right: auto;
     }
     
     .icon-container {
-        width: 150px;
-        height: 150px;
+        width: 250px;
+        height: 250px;
     }
 }
