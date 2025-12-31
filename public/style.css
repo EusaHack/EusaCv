@@ -10,16 +10,24 @@ body {
     overflow-y: auto;
 }
 
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 .content-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
     padding: 2rem;
     max-width: 1200px;
     width: 90%;
     min-height: auto;
-    flex-grow: 1; /* Ocupa el espacio disponible pero permite que el botón suba */
 }
 
 .text-side {
@@ -152,7 +160,7 @@ button {
 
 button.big-button {
   margin-top: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 0;
   padding: 1em 2em;
   border: 2px solid var(--colorShadeA);
   border-radius: 1em;
@@ -234,14 +242,95 @@ button.big-button:active::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0c245c; /* Un tono ligeramente diferente para distinguir */
+    background-color: #091c47; /* Un tono ligeramente diferente para distinguir */
     color: #ffffff;
 }
 
 .info-section h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 900;
     text-transform: uppercase;
     color: #FFD700;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.section-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    height: 100vh; /* Ocupa exactamente toda la altura de la pantalla */
+    justify-content: flex-start; /* Alinea el contenido arriba */
+    padding-top: 5vh; /* Empuja el contenido hacia abajo pero manteniéndolo en la parte superior */
+    position: relative; /* Para posicionar los botones absolutamente */
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+}
+
+.section-text {
+    font-size: 1.2rem; /* Letra aumentada */
+    line-height: 1.6;
+    color: #ffffff;
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+/* Estilos específicos para botones de navegación más pequeños */
+button.nav-button {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.8em 1.5em; /* Padding reducido */
+    border: 2px solid var(--colorShadeA);
+    border-radius: 0.8em;
+    background: var(--colorShadeE);
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+    font-size: 1.2rem; /* Fuente más pequeña */
+}
+
+button.nav-button::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.5em 0 0 var(--colorShadeA); /* Sombra reducida */
+    transform: translate3d(0, 0.5em, -1em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+button.nav-button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.25em);
+}
+
+button.nav-button:hover::before {
+    transform: translate3d(0, 0.5em, -1em);
+}
+
+button.nav-button:active {
+    transform: translate(0em, 0.5em);
+}
+
+button.nav-button:active::before {
+    transform: translate3d(0, 0, -1em);
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 2rem;
+    position: absolute;
+    bottom: 0; /* Al ras del borde inferior */
+    margin-bottom: 3rem; /* Margen aumentado para subirlos un poco */
+    width: 100%;
+    justify-content: center;
+    padding: 0;
 }
