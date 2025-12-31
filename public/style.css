@@ -411,16 +411,94 @@ button.nav-button:active::before {
     font-weight: 700;
 }
 
-/* Estilos para Section 3 - Sliding Card */
-.card {
+/* Estilos para Section 3 - Sliding Card Carousel */
+.carousel-wrapper {
     position: relative;
-    width: 360px; /* Tamaño aumentado */
+    width: 100%;
+    max-width: 500px; /* Un poco más ancho que la tarjeta para las flechas */
+    margin: 0 auto 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-container {
+    position: relative;
+    width: 360px;
     height: 450px;
-    margin: 0 auto 2rem auto; /* Margen superior eliminado para subirla */
+    perspective: 1000px;
+}
+
+.card {
+    position: absolute; /* Cambiado a absoluto para apilarlas */
+    top: 0;
+    left: 0;
+    width: 360px;
+    height: 450px;
     background: transparent;
     border-radius: 10px;
-    overflow: hidden; /* Para que la animación de deslizamiento funcione bien */
+    overflow: hidden;
     box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    z-index: 0;
+    pointer-events: none; /* Desactiva interacción en las cartas ocultas */
+}
+
+.card.active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.card.prev,
+.card.next {
+    opacity: 0.4;
+    transform: scale(0.95) translateY(10px);
+    z-index: 5;
+}
+
+/* Botones del carrusel */
+.carousel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #FFD700;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 50%;
+    transition: background 0.3s;
+    z-index: 20;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.prev-btn {
+    left: -60px;
+}
+
+.next-btn {
+    right: -60px;
+}
+
+/* Ajustes responsivos para flechas */
+@media (max-width: 600px) {
+    .carousel-wrapper {
+        max-width: 360px;
+    }
+    .prev-btn {
+        left: -40px;
+    }
+    .next-btn {
+        right: -40px;
+    }
 }
 
 .card .slide {
