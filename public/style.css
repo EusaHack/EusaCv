@@ -1,6 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -77,6 +78,75 @@ body {
     width: 100%;
     height: 100%;
     filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.4));
+}
+
+
+/* VARIABLES DEL EFECTO */
+:root {
+  --vhs-noise: url("https://i.gyazo.com/a26366e538851a5c569ff648e99b7fd4.png");
+  --vhs-glitch: url("https://64.media.tumblr.com/da60c13b478dda09ab90c27e880983b8/tumblr_nd4pwdPKdc1tun3l0o1_1280.gifv");
+}
+
+/* CONTENEDOR BASE */
+.vhs {
+  position: relative;
+  overflow: hidden;
+}
+
+/* RUIDO CONSTANTE */
+.vhs::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--vhs-noise);
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* DISTORSIÓN VHS (HOVER o ANIMADA) */
+.vhs::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--vhs-glitch);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 3;
+  transition: opacity 0.2s;
+}
+
+/* ACTIVA EL EFECTO */
+.vhs::after {
+  opacity: 0.6;
+}
+
+.start-btn {
+    margin-top: 2rem;
+    padding: 1rem 4rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #091c47;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.start-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    background-color: #ffe44d;
 }
 
 /* Responsive adjustments */
