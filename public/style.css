@@ -10,10 +10,28 @@ body {
 }
 
 .content-wrapper {
-    text-align: center;
-    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
     padding: 2rem;
-    max-width: 800px;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.text-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    flex: 1;
+}
+
+.image-side {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .top-text {
@@ -21,73 +39,75 @@ body {
     letter-spacing: 0.2em;
     font-weight: 700;
     color: #FFD700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     text-transform: uppercase;
-}
-
-.title-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem 0;
 }
 
 .main-title {
     font-size: 5rem;
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1;
     margin: 0;
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    text-align: right;
-}
-
-.icon-container {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-}
-
-.icon-container svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 }
 
 .bottom-text {
     font-size: 1.2rem;
     font-weight: 400;
     color: #ffffff;
-    margin-top: 2rem;
+    margin-top: 1rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
+    line-height: 1.4;
+    max-width: 400px;
+}
+
+.icon-container {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-container svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.4));
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-    .title-container {
-        flex-direction: column;
+@media (max-width: 900px) {
+    .content-wrapper {
+        flex-direction: column-reverse;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .text-side {
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-side {
+        justify-content: center;
     }
     
     .main-title {
         font-size: 3.5rem;
-        text-align: center;
     }
     
     .bottom-text {
         font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .icon-container {
-        width: 80px;
-        height: 80px;
+        width: 150px;
+        height: 150px;
     }
 }
