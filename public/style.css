@@ -602,7 +602,7 @@ button.nav-button:active::before {
     align-items: center;
     flex: 1;
     width: 100%;
-    margin-top: -9rem;
+    margin-top: -11rem;
 }
 
 .software-container h3 {
@@ -813,4 +813,78 @@ button.nav-button:active::before {
     background: #e6c200;
 }
 
+/* Estilos para el contenedor fijo del carrusel */
+.logo-carousel-fixed {
+    position: fixed;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    height: 60vh; /* Altura controlada */
+    display: flex;
+    align-items: center;
+}
 
+/* Carrusel Vertical de Logos */
+.carousel {
+    width: 120px; /* Más angosto para que parezca una barra lateral */
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1rem 0;
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    backdrop-filter: blur(5px); /* Efecto vidrio */
+}
+
+.track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    animation: scroll-vertical 30s linear infinite;
+}
+
+.track:hover {
+    animation-play-state: paused;
+}
+
+.item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.item img {
+    width: 80%;
+    max-width: 80px; /* Logos más pequeños */
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.8);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.item img:hover {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+@keyframes scroll-vertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .logo-carousel-fixed {
+        display: none; /* Ocultar en móvil para no tapar contenido */
+    }
+}
