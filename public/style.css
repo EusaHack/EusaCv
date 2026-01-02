@@ -18,6 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    position: relative;
 }
 
 .content-wrapper {
@@ -637,4 +638,94 @@ button.nav-button:active::before {
     background: #FFD700; /* Cambio de color al hacer hover */
     color: #091c47;
     transform: skew(-10deg);
+}
+
+
+.social-icons ul {
+  display: flex;
+  justify-content: center; /* mejor que position absolute */
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para Social Icons */
+.social-icons {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.social-icons ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons ul li {
+  list-style: none;
+}
+
+.social-icons ul li a {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+}
+
+.social-icons ul li a .icon {
+  color: #262626;
+  transition: 0.5s;
+  position: relative;
+  z-index: 2;
+}
+
+.social-icons ul li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.social-icons ul li a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.social-icons ul li a:hover::before {
+  top: 0;
+}
+
+/* Colores por red */
+.social-icons ul li:nth-child(1) a::before {
+  background: #3b5999;
+}
+
+.social-icons ul li:nth-child(2) a::before {
+  background: #55acee;
+}
+
+.social-icons ul li:nth-child(3) a::before {
+  background: #0077b5;
+}
+
+.social-icons ul li:nth-child(4) a::before {
+  background: #dd4b39;
 }
