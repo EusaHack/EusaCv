@@ -784,4 +784,33 @@ button.nav-button:active::before {
   background: #0077b5;
 }
 
+/* Scroll para sección 5 (Competencias) */
+#section5 .software-container {
+    overflow-y: auto;
+    max-height: 60vh;
+    padding-right: 10px;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    margin-top: -2rem; /* Ajuste para mantener posición pero permitir scroll */
+}
+
+/* Personalización del scrollbar */
+#section5 .software-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#section5 .software-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+#section5 .software-container::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    border-radius: 4px;
+}
+
+#section5 .software-container::-webkit-scrollbar-thumb:hover {
+    background: #e6c200;
+}
+
 
