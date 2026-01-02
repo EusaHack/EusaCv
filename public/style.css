@@ -602,7 +602,7 @@ button.nav-button:active::before {
     align-items: center;
     flex: 1;
     width: 100%;
-    margin-top: -3rem;
+    margin-top: -9rem;
 }
 
 .software-container h3 {
@@ -782,43 +782,6 @@ button.nav-button:active::before {
 
 .social-icons ul li:nth-child(3) a::before {
   background: #0077b5;
-}
-
-/* Carrusel de Certificados (Section 5) */
-#certificates-track .team-card {
-    flex: 0 0 calc(25% - 2rem); /* 4 tarjetas visibles por defecto, menos margen */
-    width: auto; /* Sobrescribir ancho fijo si existe */
-    height: 16rem; /* Altura fija para uniformidad */
-    margin: 1rem;
-    max-width: none; /* Permitir estirarse */
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    position: relative;
-}
-
-#certificates-track .team-card__image {
-    height: 100%; /* Imagen ocupa todo */
-}
-
-/* Responsividad para Certificados */
-@media (max-width: 1200px) {
-    #certificates-track .team-card {
-        flex: 0 0 calc(33.333% - 2rem); /* 3 tarjetas */
-    }
-}
-
-@media (max-width: 900px) {
-    #certificates-track .team-card {
-        flex: 0 0 calc(50% - 2rem); /* 2 tarjetas */
-    }
-}
-
-@media (max-width: 600px) {
-    #certificates-track .team-card {
-        flex: 0 0 calc(100% - 2rem); /* 1 tarjeta */
-    }
 }
 
 

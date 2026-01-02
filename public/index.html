@@ -330,14 +330,12 @@
         <div class="content-wrapper section-content">
             <h2>COMPETENCIAS</h2>
             <div class="software-container">
-                <div class="carousel-wrapper" id="certificates-wrapper">
-                    <div class="carousel-mask">
-                        <div class="carousel-container" id="certificates-track">
-                            <!-- Los certificados se generarán dinámicamente con JS -->
-                        </div>
-                    </div>
-                    <button class="carousel-btn prev-btn" onclick="moveCertificatesCarousel(-1)">&#10094;</button>
-                    <button class="carousel-btn next-btn" onclick="moveCertificatesCarousel(1)">&#10095;</button>
+                <h3>Redes y Seguridad</h3>
+                <div class="software-tags">
+                    <span class="tag">CCNA: Enterprise Networking, Security, and Automation</span>
+                    <span class="tag">CCNA: Switching, Routing, and Wireless Essentials</span>
+                    <span class="tag">CCNA: Introduction to Networks</span>
+                    <span class="tag">NSE 1 Network Security Associate</span>
                 </div>
             </div>
             <div class="navigation-buttons">
@@ -356,105 +354,5 @@
             <li><a href="https://www.linkedin.com/in/eusa/"><i class="fab fa-linkedin-in icon"></i></a></li>
         </ul>
     </div>
-
-    <script>
-        // Datos de Certificados
-        const certificates = [
-            {
-                title: "CCNA: Enterprise Networking, Security, and Automation",
-                desc: "Enfoque en redes empresariales, seguridad y automatización",
-                image: "images/ccna3.png" // Nombre sugerido
-            },
-            {
-                title: "CCNA: Switching, Routing, and Wireless Essentials",
-                desc: "Enfoque en conmutación, enrutamiento y redes inalámbricas",
-                image: "images/ccna2.png" // Nombre sugerido
-            },
-            {
-                title: "CCNA: Introduction to Networks",
-                desc: "Introducción a conceptos y fundamentos de redes",
-                image: "images/ccna1.png" // Nombre sugerido
-            },
-            {
-                title: "NSE 1 Network Security Associate",
-                desc: "Asociado de Seguridad de Red",
-                image: "images/nse1.png" // Nombre sugerido
-            }
-        ];
-
-        // Renderizar Certificados
-        function renderCertificates() {
-            const track = document.getElementById('certificates-track');
-            if (!track) return;
-            
-            track.innerHTML = certificates.map(cert => `
-                <div class="team-card">
-                    <div class="team-card__image">
-                        <img src="${cert.image}" alt="${cert.title}" onerror="this.style.display='none'; this.parentElement.style.backgroundColor='#ccc'; this.parentElement.innerHTML='<div style=\'display:flex;justify-content:center;align-items:center;height:100%;color:#555;padding:10px;text-align:center;\'>${cert.title}</div>'">
-                    </div>
-                    <div class="team-card__content">
-                        <div>
-                            <h4 style="margin: 0 0 10px 0; color: #333; font-size: 1rem;">${cert.title}</h4>
-                            <p style="margin: 0; font-size: 0.9rem; color: #555;">${cert.desc}</p>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Lógica del Carrusel de Certificados
-        let certCurrentIndex = 0;
-
-        function getCertificatesVisibleCount() {
-            if (window.innerWidth <= 600) return 1;
-            if (window.innerWidth <= 900) return 2;
-            if (window.innerWidth <= 1200) return 3;
-            return 4;
-        }
-
-        function moveCertificatesCarousel(direction) {
-            const track = document.getElementById('certificates-track');
-            const totalItems = certificates.length;
-            const visibleItems = getCertificatesVisibleCount();
-            const itemWidth = 100 / visibleItems; // Porcentaje
-            
-            // Actualizar índice
-            certCurrentIndex += direction;
-            
-            // Límites (Carrusel infinito o tope) - Implementación simple con topes
-            const maxIndex = Math.ceil(totalItems / visibleItems) - 1;
-            // Ajuste para movimiento item por item o grupo por grupo.
-            // Dado el diseño flexible, moveremos de 1 en 1 item para suavidad, 
-            // pero el requerimiento decía "de 4 en 4" visualmente.
-            // Si queremos mover "una pantalla" completa:
-            // certCurrentIndex += direction * visibleItems;
-            
-            // Vamos a implementar movimiento circular simple item a item para mejor UX
-            if (certCurrentIndex < 0) {
-                certCurrentIndex = totalItems - visibleItems; 
-                if (certCurrentIndex < 0) certCurrentIndex = 0;
-            } else if (certCurrentIndex > totalItems - visibleItems) {
-                certCurrentIndex = 0;
-            }
-
-            // Calcular desplazamiento
-            // El desplazamiento es el índice * ancho de item (en %)
-            // Pero como usamos flexbox con porcentajes, translateX debe ser relativo al contenedor total
-            // Una mejor aproximación con CSS flex:
-            // Si cada item mide 25% (4 items), mover 1 item es mover 25%.
-            
-            const translateValue = -(certCurrentIndex * (100 / visibleItems));
-            track.style.transform = `translateX(${translateValue}%)`;
-        }
-
-        // Inicializar
-        document.addEventListener('DOMContentLoaded', () => {
-            renderCertificates();
-            // Recalcular al cambiar tamaño de ventana
-            window.addEventListener('resize', () => {
-                moveCertificatesCarousel(0); // Reset position adjust
-            });
-        });
-    </script>
 </body>
 </html>
