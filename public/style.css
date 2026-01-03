@@ -882,9 +882,293 @@ button.nav-button:active::before {
     100% { transform: translateY(-50%); }
 }
 
+@keyframes scroll-horizontal {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 /* Media Queries para Responsividad */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .logo-carousel-fixed {
-        display: none; /* Ocultar en móvil para no tapar contenido */
+        /* Cambiar a barra horizontal inferior en móviles y tablets */
+        display: flex;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        transform: none;
+        background: rgba(9, 28, 71, 0.95);
+        border-top: 1px solid rgba(255, 215, 0, 0.3);
+        backdrop-filter: blur(10px);
+    }
+
+    .carousel {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border: none;
+        mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    }
+
+    .track {
+        flex-direction: row;
+        width: max-content;
+        height: 100%;
+        gap: 1rem;
+        animation: scroll-horizontal 20s linear infinite;
+    }
+
+    .item {
+        width: auto;
+        height: 100%;
+        padding: 0 1rem;
+    }
+
+    .item img {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    /* Ajustar iconos sociales para que no se superpongan con el carrusel inferior */
+    .social-icons {
+        bottom: 80px; /* Subir para dejar espacio al carrusel */
+        top: auto;
+        transform: none;
+        right: 10px;
+    }
+    
+    .social-icons ul li a {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        padding-bottom: 100px; /* Aumentar espacio para el carrusel y botones */
+    }
+
+    .main-title {
+        font-size: 2.5rem; /* Reducir tamaño del título */
+        word-wrap: break-word; /* Evitar desbordamiento */
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Reducir tamaño de títulos de sección h2 en móvil */
+    .info-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        word-wrap: break-word;
+    }
+
+    .top-text {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .bottom-text {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .text-side {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        flex: 0 1 auto; /* No obligar a expandirse */
+    }
+    
+    .image-side {
+        justify-content: center;
+        margin-top: 0.5rem; /* Reducir margen superior de la imagen */
+        width: 100%;
+        flex: 0 1 auto;
+    }
+
+    .icon-container {
+        width: 150px; /* Reducir más la imagen para dar espacio */
+        height: 150px;
+    }
+
+    /* Ajustar botón grande de comenzar */
+    button.big-button {
+        font-size: 1.2rem;
+        padding: 0.8em 1.5em;
+    }
+
+    /* Asegurar que los botones sean visibles y accesibles */
+    .navigation-buttons {
+        margin-top: 1rem; /* Subir botones reduciendo margen */
+        flex-direction: column;
+        gap: 0.8rem; /* Reducir espacio entre botones */
+        width: 100%;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .nav-button {
+        width: 80%; /* Botones más anchos para tocar fácil */
+        max-width: 250px;
+    }
+
+    /* Ajustes específicos para móviles pequeños (como el del usuario 393x852) */
+    @media (max-height: 900px) {
+        .hero-section {
+            height: auto; /* Permitir que crezca si el contenido es mucho */
+            min-height: 100vh;
+            padding-top: 2rem;
+            padding-bottom: 90px; /* Espacio para el carrusel fijo */
+        }
+    }
+
+    /* Scroll para el texto de Perfil Profesional en móviles */
+    .scrollable-text {
+        max-height: 45vh; /* Altura máxima para permitir scroll */
+        overflow-y: auto;
+        padding-right: 10px;
+        margin-bottom: 6rem; /* Espacio para no chocar con botones */
+        width: 100%;
+    }
+
+    .scrollable-text::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .scrollable-text::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+    }
+
+    .scrollable-text::-webkit-scrollbar-thumb {
+        background: #FFD700;
+        border-radius: 3px;
+    }
+
+    /* Optimización Formación Académica Móvil */
+    .experience-container {
+        max-height: 50vh;
+        overflow-y: auto;
+        padding-right: 5px;
+        gap: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 5rem; /* Espacio para botones */
+    }
+
+    .experience-card {
+        padding: 1rem;
+    }
+
+    .card-header {
+        font-size: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+    
+    .separator {
+        display: none; /* Ocultar separador en móvil para saltar línea */
+    }
+
+    .job-title {
+        font-size: 1.1rem;
+    }
+
+    .card-date {
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+
+    /* Scrollbar para experiencia */
+    .experience-container::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .experience-container::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+    }
+
+    .experience-container::-webkit-scrollbar-thumb {
+        background: #FFD700;
+        border-radius: 3px;
+    }
+
+    /* Optimización Software y Competencias Móvil */
+    .software-container {
+        max-height: 50vh;
+        overflow-y: auto;
+        padding-right: 5px;
+        justify-content: flex-start;
+        margin-top: 0; /* Resetear margen negativo grande */
+        padding-top: 0;
+        margin-bottom: 5rem;
+        width: 100%;
+    }
+
+    /* Asegurar que el selector específico de sección 5 no rompa el estilo móvil */
+    #section5 .software-container {
+        margin-top: 0;
+        max-height: 50vh;
+    }
+
+    /* Estilos específicos más compactos para Section 5 en móvil debido a textos largos */
+    #section5 .software-tags .tag {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        white-space: normal; /* Permitir que el texto de la etiqueta haga salto de línea */
+        text-align: center;
+        line-height: 1.2;
+        max-width: 100%;
+    }
+    
+    #section5 .software-tags {
+        gap: 4px;
+    }
+
+    .software-container h3 {
+        font-size: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .software-tags {
+        gap: 5px;
+        margin-bottom: 0.5rem;
+    }
+
+    .tag {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Scrollbar para software */
+    .software-container::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .software-container::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+    }
+
+    .software-container::-webkit-scrollbar-thumb {
+        background: #FFD700;
+        border-radius: 3px;
     }
 }
