@@ -1012,15 +1012,18 @@ button.nav-button:active::before {
     .navigation-buttons {
         margin-top: 1rem; /* Subir botones reduciendo margen */
         flex-direction: column;
-        gap: 0.8rem; /* Reducir espacio entre botones */
+        gap: 0.5rem; /* Reducir espacio entre botones */
         width: 100%;
         align-items: center;
-        padding-bottom: 20px;
+        padding-bottom: 0;
+        bottom: 110px; /* Subir botones para no chocar con carrusel inferior (70px) */
     }
 
     .nav-button {
-        width: 80%; /* Botones más anchos para tocar fácil */
-        max-width: 250px;
+        width: 70%; /* Botones más chicos */
+        max-width: 200px;
+        font-size: 0.9rem; /* Texto más pequeño */
+        padding: 0.6em 1em; /* Padding reducido */
     }
 
     /* Ajustes específicos para móviles pequeños (como el del usuario 393x852) */
@@ -1147,6 +1150,29 @@ button.nav-button:active::before {
         margin-bottom: 0.5rem;
     }
 
+    /* Scroll para contenido de tarjetas en Section 3 (Experiencia Carousel) */
+    .card .slide .content {
+        max-height: 100%;
+        overflow-y: auto;
+        padding-right: 5px; /* Espacio para scrollbar */
+        width: 100%;
+    }
+
+    /* Scrollbar para content de card */
+    .card .slide .content::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .card .slide .content::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+    }
+
+    .card .slide .content::-webkit-scrollbar-thumb {
+        background: #FFD700;
+        border-radius: 3px;
+    }
+
     .software-tags {
         gap: 5px;
         margin-bottom: 0.5rem;
@@ -1170,5 +1196,11 @@ button.nav-button:active::before {
     .software-container::-webkit-scrollbar-thumb {
         background: #FFD700;
         border-radius: 3px;
+    }
+
+    /* Ajuste tamaño botones carrusel en móvil */
+    .carousel-btn {
+        font-size: 1rem;
+        padding: 0.5em 0.8em;
     }
 }
