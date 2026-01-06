@@ -784,6 +784,10 @@ button.nav-button:active::before {
   background: #0077b5;
 }
 
+.social-icons ul li:nth-child(4) a::before {
+  background: #FFD700;
+}
+
 /* Scroll para sección 5 (Competencias) */
 #section5 .software-container {
     overflow-y: auto;
